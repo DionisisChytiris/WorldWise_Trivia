@@ -1,0 +1,28 @@
+{
+  "_SETTINGS": "----------SETTINGS-------------------",
+  "change-language": "Change language",
+  "change-theme": "Change Theme",
+  "welcome": "Welcome to Quizzify",
+  "hello": "Hello",
+  "skip": "Skip",
+  "next-step": "Next Step",
+  "settings": "Settings",
+  "Enter your Name": "Enter your Name",
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode",
+
+  "_CATEGORIES": "----------CATEGORIES---------------",
+  "categories": "Categories",
+  "capitals": "Capitals",
+  "flags": "Flags",
+  "animals": "Animals",
+  "science": "Science",
+  "europe": "Europe",
+  "america": "America",
+  "africa": "Africa",
+  "asia": "Asia",
+  "oceania": "Oceania",
+  "test": {
+    "header": "This is the header"
+  }
+}

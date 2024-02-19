@@ -1,0 +1,155 @@
+const FlagsAmericaEl = [
+    {
+      id: "2",
+      continent: "America",
+      country: "Αργεντινή",
+      capital: "Buenos Aires",
+      img: require("../../../assets/Flags/argentina.png"),
+    },
+  
+    {
+      id: "6a",
+      continent: "America",
+      country: "Μπαχάμες",
+      capital: "Nassau",
+      img: require("../../../assets/Flags/Bahamas.png"),
+    },
+  
+    {
+      id: "7b",
+      continent: "America",
+      country: "Μπαρμπάντος",
+      capital: "Μπριτζτάουν",
+      img: require("../../../assets/Flags/Barbados.png"),
+    },
+  
+    {
+      id: "9",
+      continent: "America",
+      country: "Βολιβία",
+      capital: "Σούκρε \n(Λα Πας)",
+      img: require("../../../assets/Flags/bolivia.png"),
+    },
+    {
+      id: "10", 
+      continent: "America",
+      country: "Βραζιλία",
+      capital: "Μπραζίλια",
+      img: require("../../../assets/Flags/brazil.png"),
+    },
+    {
+      id: "12",
+      continent: "America",
+      country: "Καναδάς",
+      capital: "Οττάβα",
+      img: require("../../../assets/Flags/canada.png"),
+    },
+    {
+      id: "13",
+      continent: "America",
+      country: "Χιλή",
+      capital: "Σαντιάγο",
+      img: require("../../../assets/Flags/chile.png"),
+    },
+    {
+      id: "15",
+      continent: "America",
+      country: "Κολομβία",
+      capital: "Μπογκοτά",
+      img: require("../../../assets/Flags/colombia.png"),
+    },
+    {
+      id: "16",
+      continent: "America",
+      country: "Κόστα Ρίκα",
+      capital: "Σαν Χοσέ",
+      img: require("../../../assets/Flags/costaRica.png"),
+    },
+    {
+        id: '17a',
+        continent: 'America',
+        country: 'Κούβα',
+        capital: 'Αβάνα',
+        img: require('../../../assets/Flags/Cuba.png')
+    },
+    {
+      id: "21",
+      continent: "America",
+      country: "Ισημερινός",
+      capital: "Κίτο",
+      img: require("../../../assets/Flags/ecuador.png"),
+    },
+    {
+      id: "23",
+      continent: "America",
+      country: "Ελ Σαλβαδόρ",
+      capital: "Σαν Σαλβαδόρ",
+      img: require("../../../assets/Flags/elSalvador.png"),
+    },
+    {
+      id: "36",
+      continent: "America",
+      country: "Τζαμάικα",
+      capital: "Κίνγκστον",
+      img: require("../../../assets/Flags/jamaica.png"),
+    },
+    {
+      id: "46",
+      continent: "America",
+      country: "Μεξικό",
+      capital: "Μεξικό του Μεξικού",
+      img: require("../../../assets/Flags/mexico.png"),
+    },
+    {
+      id: "50",
+      continent: "America",
+      country: "Νικαράγουα",
+      capital: "Μανάγουα",
+      img: require("../../../assets/Flags/nicaragua.png"),
+    },
+    {
+      id: "53aa",
+      continent: "America",
+      country: "Παναμάς",
+      capital: "Πόλη του Παναμά",
+      img: require("../../../assets/Flags/Panama.png"),
+    },
+    {
+      id: "54",
+      continent: "America",
+      country: "Παραγουάη",
+      capital: "Ασουνσιόν",
+      img: require("../../../assets/Flags/paraguay.png"),
+    },
+    {
+      id: "55",
+      continent: "America",
+      country: "Περού",
+      capital: "Λίμα",
+      img: require("../../../assets/Flags/peru.png"),
+    },
+    {
+      id: "81",
+      continent: "America",
+      country: "Ουρουγουάη",
+      capital: "Μοντεβιδέο",
+      img: require("../../../assets/Flags/uruguay.png"),
+    },
+    {
+      id: "82",
+      continent: "America",
+      country: "Ηνωμένες Πολιτείες",
+      capital: "Ουάσινγκτον",
+      img: require("../../../assets/Flags/usa.png"),
+    },
+    {
+      id: "83",
+      continent: "America",
+      country: "Βενεζουέλα",
+      capital: "Καράκας",
+      img: require("../../../assets/Flags/venezuela.png"),
+    },
+  ];
+  
+  export default FlagsAmericaEl;
+  

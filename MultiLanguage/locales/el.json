@@ -1,0 +1,26 @@
+{
+  "_comment1": "----------Settings---------------",
+  "change-language": "Αλλαγή γλώσσας",
+  "change-theme": "Αλλαγή Θέματος",
+  "welcome": "Καλώς Ήλθατε",
+  "hello": "Γειά σου",
+  "skip": "Skip",
+  "next-step": "Επόμενο",
+  "settings": "Ρυθμίσεις",
+  "Enter your Name": "Εισάγεται το όνομά σας",
+  "darkMode": "Σκούρο Θέμα",
+  "lightMode": "Ανοιχτό Θέμα",
+  "categories": "Κατηγορίες",
+  "capitals": "Πρωτεύουσες",
+  "flags": "Σημαίες",
+  "animals": "Ζώα",
+  "science": "Επιστήμη",
+  "europe": "Ευρώπη",
+  "america": "Aμερική",
+  "africa": "Aφρική",
+  "asia": "Aσία",
+  "oceania": "Ωκεανία",
+  "test": {
+    "header": "This is the header"
+  }
+}

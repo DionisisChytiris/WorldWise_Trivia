@@ -1,0 +1,26 @@
+{
+  "_comment1": "----------Settings---------------",
+  "change-language": "Cambiar idioma",
+  "change-theme": "Cambiar tema",
+  "welcome": "Bienvenidos",
+  "hello": "Hola",
+  "skip": "Salir",
+  "next-step": "Proximo",
+  "settings": "Ajustes",
+  "Enter your Name": "Escribir tu nobre",
+  "darkMode": "Modo Oscuro",
+  "lightMode": "Modo Claro",
+  "categories": "Categorías",
+  "capitals": "Capitales",
+  "flags": "Banderas",
+  "animals": "Animales",
+  "science": "Ciencia",
+  "europe": "Europa",
+  "america": "América",
+  "africa": "África",
+  "asia": "Asia",
+  "oceania": "Oceania",
+  "test": {
+    "header": "This is the header"
+  }
+}
