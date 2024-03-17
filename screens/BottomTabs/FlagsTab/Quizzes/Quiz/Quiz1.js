@@ -9,3 +9,4 @@ const Quiz1 = () => {
 };
 
 export default Quiz1;
+ 

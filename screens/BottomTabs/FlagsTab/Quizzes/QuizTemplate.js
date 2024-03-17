@@ -1,7 +1,7 @@
 import { View, Text, Pressable, Image, StyleSheet } from "react-native";
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useTheme } from "../../../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../../../utils/ThemeMode/ThemeProvider";
 import { MaterialIcons } from "@expo/vector-icons";
 import { styles } from "./styles";
 // import GuessTemplate from "./GuessTemplate";
@@ -269,6 +269,20 @@ const QuizTemplate = (props) => {
                   >
                     <View>
                       <Image source={item.img} style={img} />
+
+                      {show ? 
+                      <Text
+                        style={{
+                          color: "white",
+                          position: "absolute",
+                          bottom: 10,
+                          left: 10,
+                        }}
+                      >
+                        {item.country}
+                      </Text>: null 
+                      
+                    }
                     </View>
                     {/* Correct (Tick) Symbol */}
                     {selectedAnswer === index &&

@@ -52,7 +52,39 @@ import {
   quiz10El,
   quiz10En,
   quiz10Es,
-} from "../../ReduxSetUp";
+} from "../../ReduxSetUp/FlagsQuizSlices";
+import {
+  quizCpt1El,
+  quizCpt1En,
+  quizCpt1Es,
+  quizCpt2El,
+  quizCpt2En,
+  quizCpt2Es,
+  quizCpt3El,
+  quizCpt3En,
+  quizCpt3Es,
+  quizCpt4El,
+  quizCpt4En,
+  quizCpt4Es,
+  quizCpt5El,
+  quizCpt5En,
+  quizCpt5Es,
+  quizCpt6El,
+  quizCpt6En,
+  quizCpt6Es,
+  quizCpt7El,
+  quizCpt7En,
+  quizCpt7Es,
+  quizCpt8El,
+  quizCpt8En,
+  quizCpt8Es,
+  quizCpt9El,
+  quizCpt9En,
+  quizCpt9Es,
+  quizCpt10El,
+  quizCpt10En,
+  quizCpt10Es,
+} from "../../ReduxSetUp/CapitalsQuizSlices";
 
 const MultiLanguage = () => {
   const navigation = useNavigation();
@@ -82,6 +114,16 @@ const MultiLanguage = () => {
     dispatch(quiz8En());
     dispatch(quiz9En());
     dispatch(quiz10En());
+    dispatch(quizCpt1En());
+    dispatch(quizCpt2En());
+    dispatch(quizCpt3En());
+    dispatch(quizCpt4En());
+    dispatch(quizCpt5En());
+    dispatch(quizCpt6En());
+    dispatch(quizCpt7En());
+    dispatch(quizCpt8En());
+    dispatch(quizCpt9En());
+    dispatch(quizCpt10En());
   };
   const Spanish = () => {
     setColor2("#4ddbdf");
@@ -103,6 +145,16 @@ const MultiLanguage = () => {
     dispatch(quiz8Es());
     dispatch(quiz9Es());
     dispatch(quiz10Es());
+    dispatch(quizCpt1Es());
+    dispatch(quizCpt2Es());
+    dispatch(quizCpt3Es());
+    dispatch(quizCpt4Es());
+    dispatch(quizCpt5Es());
+    dispatch(quizCpt6Es());
+    dispatch(quizCpt7Es());
+    dispatch(quizCpt8Es());
+    dispatch(quizCpt9Es());
+    dispatch(quizCpt10Es());
   };
   const Greek = () => {
     setColor3("#4ddbdf");
@@ -124,6 +176,16 @@ const MultiLanguage = () => {
     dispatch(quiz8El());
     dispatch(quiz9El());
     dispatch(quiz10El());
+    dispatch(quizCpt1El());
+    dispatch(quizCpt2El());
+    dispatch(quizCpt3El());
+    dispatch(quizCpt4El());
+    dispatch(quizCpt5El());
+    dispatch(quizCpt6El());
+    dispatch(quizCpt7El());
+    dispatch(quizCpt8El());
+    dispatch(quizCpt9El());
+    dispatch(quizCpt10El());
   };
 
   return (

@@ -1,15 +1,15 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import QuizScreen from "../QuizScreen";
-// import Hello from "./Hello";
-import Tab2 from "../BottomTabs/Tab2";
 import DrawerContent from "./DrawerContent";
 import TabNavCapitals from "../BottomTabs/CapitalsTab/TabNavCapitals";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../utils/ThemeMode/ThemeProvider";
 import TabNavFlags from "../BottomTabs/FlagsTab/TabNavFlags";
 import React from "react";
 import TabNavAnimals from "../BottomTabs/AnimalsTab/TabNavAnimals";
+import TabNavScience from "../BottomTabs/ScienceTab/TabNavScience";
+import TabNavMonuments from "../BottomTabs/WorldMonuments/TabNavMonuments";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -85,6 +85,15 @@ const DrawNavigator = () => {
               }}
             />
             <Stack.Screen
+              name="WorldMonuments"
+              component={TabNavMonuments}
+              options={{
+                title: t("worldMonuments"),
+                headerShown: true,
+                gestureEnabled: false,
+              }}
+            />
+            <Stack.Screen
               name="Animals"
               component={TabNavAnimals}
               options={{
@@ -94,9 +103,9 @@ const DrawNavigator = () => {
               }}
             />
             <Stack.Screen
-              name="Tab1"
-              component={Tab2}
-              options={{ headerShown: false, gestureEnabled: false }}
+              name="Science"
+              component={TabNavScience}
+              options={{ headerShown: true, gestureEnabled: false }}
             />
           </Stack.Navigator>
         )}

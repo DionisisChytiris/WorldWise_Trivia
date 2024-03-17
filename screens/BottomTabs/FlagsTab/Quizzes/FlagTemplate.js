@@ -1,6 +1,6 @@
 import { View, Text, Image, Pressable } from "react-native";
 import React, { useState, useEffect } from "react";
-import { useTheme } from "../../../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../../../utils/ThemeMode/ThemeProvider";
 import { styles } from "./styles";
 import { MaterialIcons } from "@expo/vector-icons";
 

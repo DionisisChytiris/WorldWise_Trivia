@@ -4,7 +4,7 @@ import React from 'react'
 const Return = () => {
   return (
     <View>
-      <Text>Return</Text>
+      <Text>Return Science</Text>
     </View>
   )
 }

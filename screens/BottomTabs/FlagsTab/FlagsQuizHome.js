@@ -10,12 +10,17 @@ import {
 import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRoute } from "@react-navigation/native";
+import LevelImage from "../LevelImage";
+import { useNavigation } from "@react-navigation/native";
+import { QuizBtnItem1, QuizBtnItem2 } from "./FlagsQuizHomeItem";
 
-const FlagsQuizHome = ({ navigation }) => {
+const FlagsQuizHome = () => {
+  const navigation = useNavigation();
   const route = useRoute();
-  const score1 = route.params?.score1;
-  const score2 = route.params?.score2;
-  const score3 = route.params?.score3;
+  // const score1Test = route.params?.score1;
+  const score1Test = 20;
+  // const score2 = route.params?.score2;
+  // const score3 = route.params?.score3;
   const score4 = route.params?.score4;
   const score5 = route.params?.score5;
   const score6 = route.params?.score6;
@@ -23,19 +28,177 @@ const FlagsQuizHome = ({ navigation }) => {
   const score8 = route.params?.score8;
   const score9 = route.params?.score9;
   const score10 = route.params?.score10;
-  const [score, setScore] = React.useState(0);
+  const [storeScore1, setStoreScore1] = React.useState(0);
+  const [storeScore2, setStoreScore2] = React.useState(0);
+  const [storeScore3, setStoreScore3] = React.useState(0);
+  const [storeScore4, setStoreScore4] = React.useState(0);
+  const [storeScore5, setStoreScore5] = React.useState(0);
+  const [storeScore6, setStoreScore6] = React.useState(0);
+  const [storeScore7, setStoreScore7] = React.useState(0);
+  const [storeScore8, setStoreScore8] = React.useState(0);
+  const [storeScore9, setStoreScore9] = React.useState(0);
+  const [storeScore10, setStoreScore10] = React.useState(0);
 
   React.useEffect(() => {
-    getData();
+    getItem1();
+    getItem2();
+    getItem3();
+    getItem4();
+    getItem5();
+    getItem6();
+    getItem7();
+    getItem8();
+    getItem9();
+    getItem10();
+    // getAllKeys();
   }, []);
 
-  const getData = () => {
+  // const getAllKeys = () => {
+  //   try {
+  //      AsyncStorage.getAllKeys().then((value) => {
+  //       if (value != null) {
+  //         let score1 = JSON.parse(value);
+  //         let score2 = JSON.parse(value);
+  //         let score3 = JSON.parse(value);
+  //         let score4 = JSON.parse(value);
+  //         let score5 = JSON.parse(value);
+  //         setStoreScore1(score1);
+  //         setStoreScore2(score2);
+  //         setStoreScore3(score3);
+  //         setStoreScore4(score4);
+  //         setStoreScore5(score5);
+  //       }
+  //     });
+  //     console.log(keys);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+  const setItem1 = async () => {
     try {
-      AsyncStorage.getItem("score").then((value) => {
+      await AsyncStorage.setItem("score1", JSON.stringify(score1Test));
+      // navigation.navigate('FlagsHome', {score1: score1Test})
+      navigation.navigate("Quiz2");
+      console.log(score1Test);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem1 = () => {
+    try {
+      AsyncStorage.getItem("score1").then((value) => {
         if (value != null) {
-          let score = JSON.parse(value);
-          setScore(score);
-          // console.log(score);
+          let score1 = JSON.parse(value);
+          setStoreScore1(score1);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem2 = () => {
+    try {
+      AsyncStorage.getItem("score2").then((value) => {
+        if (value != null) {
+          let score2 = JSON.parse(value);
+          setStoreScore2(score2);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem3 = () => {
+    try {
+      AsyncStorage.getItem("score3").then((value) => {
+        if (value != null) {
+          let score3 = JSON.parse(value);
+          setStoreScore3(score3);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const getItem4 = () => {
+    try {
+      AsyncStorage.getItem("score4").then((value) => {
+        if (value != null) {
+          let score4 = JSON.parse(value);
+          setStoreScore4(score4);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem5 = () => {
+    try {
+      AsyncStorage.getItem("score5").then((value) => {
+        if (value != null) {
+          let score5 = JSON.parse(value);
+          setStoreScore5(score5);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem6 = () => {
+    try {
+      AsyncStorage.getItem("score6").then((value) => {
+        if (value != null) {
+          let score6 = JSON.parse(value);
+          setStoreScore6(score6);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem7 = () => {
+    try {
+      AsyncStorage.getItem("score7").then((value) => {
+        if (value != null) {
+          let score7 = JSON.parse(value);
+          setStoreScore7(score7);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem8 = () => {
+    try {
+      AsyncStorage.getItem("score8").then((value) => {
+        if (value != null) {
+          let score8 = JSON.parse(value);
+          setStoreScore8(score8);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem9 = () => {
+    try {
+      AsyncStorage.getItem("score9").then((value) => {
+        if (value != null) {
+          let score9 = JSON.parse(value);
+          setStoreScore9(score9);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getItem10 = () => {
+    try {
+      AsyncStorage.getItem("score10").then((value) => {
+        if (value != null) {
+          let score10 = JSON.parse(value);
+          setStoreScore10(score10);
         }
       });
     } catch (e) {
@@ -45,14 +208,22 @@ const FlagsQuizHome = ({ navigation }) => {
 
   return (
     <ScrollView horizontal={true}>
+      <View style={{}}>
       <ImageBackground
         source={require("../../../assets/continents/worldMap.png")}
         style={{ width: 900, height: "100%" }}
       >
         <Text>FlagsQuizHome</Text>
+        <Text style={{ marginLeft: 40, color: "red" }}>
+          {storeScore1 === null ? score1Test : storeScore1}
+        </Text>
+        <Text style={{ marginLeft: 40, color: "green" }}>{score1Test}</Text>
 
         {/* Photo Level */}
         <View style={{ position: "absolute", bottom: 30, left: 30 }}>
+          <LevelImage />
+        </View>
+        {/* <View style={{ position: "absolute", bottom: 30, left: 30 }}>
           <Image
             source={require("../../../assets/more/university.png")}
             style={{ width: 100, height: 180 }}
@@ -60,7 +231,7 @@ const FlagsQuizHome = ({ navigation }) => {
           <Text style={{ marginLeft: 10, marginTop: 10, fontSize: 18 }}>
             Ambassador
           </Text>
-        </View>
+        </View> */}
 
         {/* Quiz 1 */}
         <View
@@ -77,308 +248,221 @@ const FlagsQuizHome = ({ navigation }) => {
           >
             <Text>1</Text>
           </Pressable>
-          <Text style={{ fontSize: 10 }}> {score1 ? score1 : 0}%</Text>
+          <Text style={{ fontSize: 10 }}>
+            {" "}
+            {/* {storeScore1 ? storeScore1 : 0}% */}
+            {score1Test ? score1Test : 0}%
+          </Text>
         </View>
 
         {/* Quiz  2 */}
-        {score1 > 50 ? (
-          <View style={{ position: "absolute", top: "43%", left: "14%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz2")}
-            >
-              <Text>2</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score2 ? score2 : 0}%
-            </Text>
-          </View>
+        {score1Test > 30 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={2}
+            top1="43%"
+            left="14%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", top: "43%", left: "14%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>2</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10}}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score2 ? score2 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={2}
+            img={require("../../../assets/more/padlock.png")}
+            top1="43%"
+            left="14%"
+            top2="0"
+            right="-40%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/* Quiz  3 */}
-        {score2 > 50 ? (
-          <View style={{ position: "absolute", bottom: "22%", left: "28%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz3")}
-            >
-              <Text>3</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-            {score3 ? score3 : 0}%
-            </Text>
-          </View>
+        {score1Test > 20 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={3}
+            top1="67%"
+            left="28%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", bottom: "22%", left: "28%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>3</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score3 ? score3 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={3}
+            img={require("../../../assets/more/padlock.png")}
+            top1="67%"
+            left="28%"
+            top2="0"
+            right="-40%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/* Quiz  4*/}
-        {score3 > 50 ? (
-          <View style={{ position: "absolute", top: "68%", left: "54%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz4")}
-            >
-              <Text>4</Text>
-            </Pressable>
-            <Text style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}>{score4 ? score4 : 0}%</Text>
-          </View>
+        {score1Test > 50 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={4}
+            top1="68%"
+            left="54%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", top: "68%", left: "54%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>4</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score4 ? score4 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={4}
+            img={require("../../../assets/more/padlock.png")}
+            top1="68%"
+            left="54%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/*  Quiz  5 */}
-        {score4 > 50 ? (
-          <View style={{ position: "absolute", top: "52%", left: "50%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz5")}
-            >
-              <Text>5</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >{score5 ? score5 : 0}%</Text>
-          </View>
+        {storeScore4 > 50 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={5}
+            top1="52%"
+            left="50%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", top: "52%", left: "50%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>5</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -25, fontSize: 10 }}
-            >
-              {score5 ? score5 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={5}
+            img={require("../../../assets/more/padlock.png")}
+            top1="52%"
+            left="50%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/* Quiz  6 */}
-        {score5 > 50 ? (
-          <View style={{ position: "absolute", top: "38%", left: "45%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz6")}
-            >
-              <Text>6</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >{score6 ? score6 : 0}%</Text>
-          </View>
+        {storeScore5 > 50 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={6}
+            top1="38%"
+            left="45%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", top: "38%", left: "45%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>6</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10  }}
-            >
-              {score6 ? score6 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={6}
+            img={require("../../../assets/more/padlock.png")}
+            top1="38%"
+            left="45%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/* Quiz  7 */}
-        {score6 > 50 ? (
-          <View style={{ position: "absolute", top: "33%", left: "57%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz7")}
-            >
-              <Text>7</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >{score7 ? score7 : 0}%</Text>
-          </View>
+        {storeScore6 > 50 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={7}
+            top1="33%"
+            left="57%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", top: "33%", left: "57%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>7</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score7 ? score7 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={7}
+            img={require("../../../assets/more/padlock.png")}
+            top1="33%"
+            left="57%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/* Quiz  8 */}
-        {score7 > 50 ? (
-          <View style={{ position: "absolute", top: "45%", left: "70%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz8")}
-            >
-              <Text>8</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >{score8 ? score8 : 0}%</Text>
-          </View>
+        {storeScore7 > 50 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={8}
+            top1="45%"
+            left="70%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", top: "45%", left: "70%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>8</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score8 ? score8 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={8}
+            img={require("../../../assets/more/padlock.png")}
+            top1="45%"
+            left="70%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/* Quiz  9 */}
-        {score8 > 50 ? (
-          <View style={{ position: "absolute", top: "33%", right: "10%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz5")}
-            >
-              <Text>9</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >{score9 ? score9 : 0}%</Text>
-          </View>
+        {storeScore8 > 50 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={9}
+            top1="33%"
+            left="82%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", top: "33%", right: "12%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>9</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score9 ? score9 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={9}
+            img={require("../../../assets/more/padlock.png")}
+            top1="33%"
+            left="82%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         )}
 
         {/* Quiz  10 */}
-        {score9 > 50 ? (
-          <View style={{ position: "absolute", bottom: "18%", right: "6%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => navigation.navigate("Quiz5")}
-            >
-              <Text>10</Text>
-            </Pressable>
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >{score10 ? score10 : 0}%</Text>
-          </View>
+        {storeScore9 > 50 ? (
+          <QuizBtnItem1
+            screen={setItem1}
+            number={9}
+            top1="73%"
+            left="88%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         ) : (
-          <View style={{ position: "absolute", bottom: "18%", right: "6%" }}>
-            <Pressable
-              style={styles.btn}
-              onPress={() => alert("Complete the previous level.")}
-            >
-              <Text>10</Text>
-            </Pressable>
-            <Image
-              source={require("../../../assets/more/padlock.png")}
-              style={{ width: 35, height: 35, position: 'absolute', bottom: -10, right: -10 }}
-            />
-            <Text
-              style={{ position: "absolute", top: 0, right: -20, fontSize: 10 }}
-            >
-              {score10 ? score10 : 0}%
-            </Text>
-          </View>
+          <QuizBtnItem2
+            number={10}
+            img={require("../../../assets/more/padlock.png")}
+            top1="73%"
+            left="88%"
+            top2="0"
+            right="-45%"
+            scoreNext={score1Test}
+          />
         )}
       </ImageBackground>
+      </View>
     </ScrollView>
   );
 };
@@ -396,5 +480,12 @@ const styles = StyleSheet.create({
     elevation: 5,
     shadowOffset: { width: 3, height: 3 },
     shadowOpacity: 1.0,
+  },
+  img: {
+    width: 35,
+    height: 35,
+    position: "absolute",
+    bottom: -10,
+    right: -10,
   },
 });

@@ -1,13 +1,14 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Pressable, Image, Platform, Text } from "react-native";
-import { useTheme } from "../../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../../utils/ThemeMode/ThemeProvider";
 // import LearnCapitals from "./LearnCapitals";
 // import Return from "./Return";
 import Settings from "../Settings";
 import AnimalsQuizHome from "./AnimalsQuizHome";
 import LearnAnimals from './LearnAnimals'
 import Return from './Return'
+import { TopTabAnimalsNavigator } from "./TopTabAnimals/topTabAnimalsNavigator";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -78,7 +79,11 @@ const TabNavAnimals = ({ navigation }) => {
       >
         {() => (
           <Stack.Navigator>
-            <Stack.Screen name="LearnAnimals" component={LearnAnimals} />
+            <Stack.Screen 
+            name="TopTabAnimalsNavigator" 
+            component={TopTabAnimalsNavigator} 
+            options={{headerShown: false}}
+            />
           </Stack.Navigator>
         )}
       </Tab.Screen>

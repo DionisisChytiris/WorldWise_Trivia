@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, FlatList} from "react-native";
 import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../../../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../../../utils/ThemeMode/ThemeProvider";
 import { styles } from "./styles";
 import { useSelector } from "react-redux";
-import LearnFlagItem from "../LearnFlagItem";
+import LearnFlagItem from "./LearnFlagItem";
 import { FlashList } from "@shopify/flash-list";
 import { Dimensions } from "react-native";
 

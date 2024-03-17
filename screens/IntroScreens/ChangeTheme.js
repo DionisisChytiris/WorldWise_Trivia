@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Pressable, TextInput } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../utils/ThemeMode/ThemeProvider";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ChangeTheme= () => {

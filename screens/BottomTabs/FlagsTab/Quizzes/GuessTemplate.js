@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import React, { useState, useEffect } from "react";
-import { useTheme } from "../../../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../../../utils/ThemeMode/ThemeProvider";
 import { styles } from "./styles";
 
 const GuessTemplate = (props) => {

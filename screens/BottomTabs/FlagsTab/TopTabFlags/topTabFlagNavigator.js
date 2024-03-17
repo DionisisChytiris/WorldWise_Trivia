@@ -6,7 +6,7 @@ import Asia from "./Asia";
 import Africa from "./Africa";
 import America from "./America";
 import Oceania from "./Oceania";
-import { useTheme } from "../../../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../../../utils/ThemeMode/ThemeProvider";
 
 const Tab = createMaterialTopTabNavigator();
 

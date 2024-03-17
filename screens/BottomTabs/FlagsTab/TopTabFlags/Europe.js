@@ -1,10 +1,10 @@
 import { View, Text, FlatList } from "react-native";
 import React, { useCallback, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../../../../ThemeMode/ThemeProvider";
+import { useTheme } from "../../../../utils/ThemeMode/ThemeProvider";
 import { styles } from "./styles";
 import { useSelector } from "react-redux";
-import LearnFlagItem from "../LearnFlagItem";
+import LearnFlagItem from "./LearnFlagItem";
 import { FlashList } from "@shopify/flash-list";
 // import FlagsEuropeEl from "../../../../data/flags/Europe/FlagsEuropeEl";
 import { Dimensions } from "react-native";
@@ -20,10 +20,7 @@ const Europe = () => {
 
   const renderItem = useCallback(({ item }) => {
     return (
-      <View style={{ paddingHorizontal: 5 }}>
-        {/* {item.continent === "Europe" && (
-          <LearnFlagItem {...item} />
-          )} */}
+      <View style={{ paddingHorizontal: 5}}>
         <LearnFlagItem {...item} />
       </View>
     );

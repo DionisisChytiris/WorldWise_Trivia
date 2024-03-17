@@ -9,18 +9,61 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../ThemeMode/ThemeProvider";
+import { useTheme } from "../utils/ThemeMode/ThemeProvider";
 import { Dimensions } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
+import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-const QuizScreen = ({ navigation }) => {
+// type Props = {
+//   page: any;
+//   img: any;
+//   text: string;
+//   scores: number;
+// };
+
+// Category Template
+const CategoryItem = ({ page, img, text, scores }) => {
+  const navigation = useNavigation();
+  const { colors } = useTheme();
+  return (
+    <Pressable
+      onPress={() => navigation.navigate(page)}
+      style={[
+        styles.button,
+        {
+          backgroundColor: colors.buttonContextQuiz,
+          borderColor: colors.borderColor,
+          borderWidth: 2,
+        },
+      ]}
+    >
+      <View style={styles.buttonContext}>
+        <Image style={styles.image} source={img} />
+        <Text style={[styles.text, { color: colors.textDrawer }]}>{text}</Text>
+      </View>
+      <View style={styles.progressBar}>
+        <View
+          style={[
+            styles.progressBarColor,
+            { width: `${Math.floor((scores / 100) * 100)}%` },
+          ]}
+        />
+      </View>
+    </Pressable>
+  );
+};
+
+// MAIN FUNCTION
+const QuizScreen = () => {
+  // const navigation = useNavigation();
   const { colors } = useTheme();
   const { t } = useTranslation();
   const [score, setScore] = React.useState(0);
+  const score1 = 90;
 
   React.useEffect(() => {
     getData();
@@ -56,160 +99,45 @@ const QuizScreen = ({ navigation }) => {
           </View>
           <View style={styles.content}>
             {/* Capitals */}
-            <Pressable
-              onPress={() => navigation.navigate("Capitals")}
-              style={[
-                styles.button,
-                {
-                  backgroundColor: colors.buttonContextQuiz,
-                  borderColor: colors.borderColor,
-                  borderWidth: 2,
-                },
-              ]}
-            >
-              <View style={styles.buttonContext}>
-                <Image
-                  style={styles.image}
-                  source={require("../assets/QuizScreen/lon.png")}
-                />
-                <Text style={[styles.text, { color: colors.textDrawer }]}>
-                  {t("capitals")}
-                </Text>
-              </View>
-              <View style={styles.progressBar}>
-                <View
-                  style={[
-                    styles.progressBarColor,
-                    { width: `${Math.floor((score / 100) * 100)}%` },
-                  ]}
-                />
-                {/* width: `${Math.floor((score / 100) * 100)}%`, */}
-              </View>
-            </Pressable>
+            <CategoryItem
+              page="Capitals"
+              img={require("../assets/QuizScreen/lon.png")}
+              text={t("capitals")}
+              scores={score}
+            />
+
             {/* Flags */}
-            <Pressable
-              onPress={() => navigation.navigate("Flags")}
-              style={[
-                styles.button,
-                {
-                  backgroundColor: colors.buttonContextQuiz,
-                  borderColor: colors.borderColor,
-                  borderWidth: 2,
-                },
-              ]}
-            >
-              <View style={styles.buttonContext}>
-                <Image
-                  style={styles.image}
-                  source={require("../assets/QuizScreen/flag.png")}
-                />
-                <Text style={[styles.text, { color: colors.textDrawer }]}>
-                  {t("flags")}
-                </Text>
-              </View>
-              <View style={styles.progressBar}>
-                <View
-                  style={[
-                    styles.progressBarColor,
-                    { width: `${Math.floor((score / 100) * 100)}%` },
-                  ]}
-                />
-                {/* width: `${Math.floor((score / 100) * 100)}%`, */}
-              </View>
-            </Pressable>
+            <CategoryItem
+              page="Flags"
+              img={require("../assets/QuizScreen/flag.png")}
+              text={t("flags")}
+              scores={score1}
+            />
+
+            {/* World Monuments */}
+            <CategoryItem
+              page="WorldMonuments"
+              img={require("../assets/QuizScreen/monument.jpg")}
+              // text={t("flags")}
+              text="monuments"
+              scores={score1}
+            />
+
             {/* Animals */}
-            <Pressable
-              onPress={() => navigation.navigate("Animals")}
-              style={[
-                styles.button,
-                {
-                  backgroundColor: colors.buttonContextQuiz,
-                  borderColor: colors.borderColor,
-                  borderWidth: 2,
-                },
-              ]}
-            >
-              <View style={styles.buttonContext}>
-                <Image
-                  style={styles.image}
-                  source={require("../assets/QuizScreen/animals.jpg")}
-                />
-                <Text style={[styles.text, { color: colors.textDrawer }]}>
-                  {t("animals")}
-                </Text>
-              </View>
-              <View style={styles.progressBar}>
-                <View
-                  style={[
-                    styles.progressBarColor,
-                    { width: `${Math.floor((score / 100) * 100)}%` },
-                  ]}
-                />
-                {/* width: `${Math.floor((score / 100) * 100)}%`, */}
-              </View>
-            </Pressable>
-            {/* Animals/Home */}
-            <Pressable
-              onPress={() => navigation.navigate("Home")}
-              style={[
-                styles.button,
-                {
-                  backgroundColor: colors.buttonContextQuiz,
-                  borderColor: colors.borderColor,
-                  borderWidth: 2,
-                },
-              ]}
-            >
-              <View style={styles.buttonContext}>
-                <Image
-                  style={styles.image}
-                  source={require("../assets/QuizScreen/animals.jpg")}
-                />
-                <Text style={[styles.text, { color: colors.textDrawer }]}>
-                  {t("animals")}
-                </Text>
-              </View>
-              <View style={styles.progressBar}>
-                <View
-                  style={[
-                    styles.progressBarColor,
-                    { width: `${Math.floor((score / 100) * 100)}%` },
-                  ]}
-                />
-                {/* width: `${Math.floor((score / 100) * 100)}%`, */}
-              </View>
-            </Pressable>
+            <CategoryItem
+              page="Animals"
+              img={require("../assets/QuizScreen/animals.jpg")}
+              text={t("animals")}
+              scores={score1}
+            />
+
             {/* Science */}
-            <Pressable
-              onPress={() => navigation.navigate("Home")}
-              style={[
-                styles.button,
-                {
-                  backgroundColor: colors.buttonContextQuiz,
-                  borderColor: colors.borderColor,
-                  borderWidth: 2,
-                },
-              ]}
-            >
-              <View style={styles.buttonContext}>
-                <Image
-                  style={styles.image}
-                  source={require("../assets/QuizScreen/science.jpg")}
-                />
-                <Text style={[styles.text, { color: colors.textDrawer }]}>
-                  {t("science")}
-                </Text>
-              </View>
-              <View style={styles.progressBar}>
-                <View
-                  style={[
-                    styles.progressBarColor,
-                    { width: `${Math.floor((score / 100) * 100)}%` },
-                  ]}
-                />
-                {/* width: `${Math.floor((score / 100) * 100)}%`, */}
-              </View>
-            </Pressable>
+            <CategoryItem
+              page="Science"
+              img={require("../assets/QuizScreen/science.jpg")}
+              text={t("science")}
+              scores={score1}
+            />
           </View>
         </View>
       </ScrollView>
@@ -231,8 +159,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    width: width * 0.38,
-    height: height * 0.14,
+    width: width * 0.32,
+    height: height * 0.13,
+    // width: width * 0.38,
+    // height: height * 0.14,
     borderRadius: 20,
   },
   textTitle: {
@@ -240,9 +170,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   text: {
-    fontSize: RFValue(10, 450),
+    // fontSize: RFValue(10, 450),
+    fontSize: 20,
     fontWeight: "bold",
-    width: width * 0.27,
+    width: width * 0.34,
   },
   progressBar: {
     backgroundColor: "#f5f5f5",
@@ -266,7 +197,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   button: {
-    width: width * 0.8,
+    width: width * 0.85,
     marginVertical: 10,
     paddingVertical: 10,
     paddingHorizontal: 10,
